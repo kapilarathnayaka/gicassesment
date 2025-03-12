@@ -1,56 +1,75 @@
 # Run The Code
 
-Unzip GICTest.zip
-cd GICTest
+Clone repository 
 
-dotnet clean BankingSystem/
-dotnet restore BankingSystem
-dotnet build BankingSystem/
-dotnet run --project BankingSystem/
+```bash
+git clone https://github.com/kapilarathnayaka/gicassesment.git
+```
+cd BankingSystem
 
-# Run The Test Project
-Unzip GICTest.zip
-cd GICTest
+```bash
+dotnet clean
+dotnet restore
+dotnet build
+dotnet run
+```
 
-dotnet clean BankingSystem.Tests/
-dotnet test BankingSystem.Tests/
+cd ..
+cd BankingSystem.Tests
 
-# Run Tests one by one 
+```bash
+dotnet clean
+dotnet test
+```
 
-# TransactionServiceTests
+# Run Individual Tests 
+
+## TransactionServiceTests
+
+```bash
 dotnet test --filter FullyQualifiedName=BankingSystem.Tests.TransactionServiceTests.AddTransaction_ValidDepositTransaction_ReturnsTrue
-
+```
+```bash
 dotnet test --filter FullyQualifiedName=BankingSystem.Tests.TransactionServiceTests.AddTransaction_ValidWithdrawalTransaction_ReturnsTrue
-
+```
+```bash
 dotnet test --filter FullyQualifiedName=BankingSystem.Tests.TransactionServiceTests.AddTransaction_InvalidWithdrawalTransaction_ReturnsFalse
-
+```
+```bash
 dotnet test --filter FullyQualifiedName=BankingSystem.Tests.TransactionServiceTests.AddTransaction_InvalidAmount_ReturnsFalse
-
+```
+```bash
 dotnet test --filter FullyQualifiedName=BankingSystem.Tests.TransactionServiceTests.GetTransactionsByAccount_ReturnsCorrectTransactions
-
+```
+```bash
 dotnet test --filter FullyQualifiedName=BankingSystem.Tests.TransactionServiceTests.PrintAllTransactions_ShouldReturnCorrectTransactions
+```
+with this command 'dotnet test --filter FullyQulifiedName=[TestCaseName] (without []) all the other tests can be run individually.
 
-with this command 'dotnet test --filter FullyQulifiedName=<TestCaseName>' all the other tests can be run individually.
+## StatementServiceTests
 
-# StatementServiceTests
-
+```bash
 dotnet test --filter FullyQualifiedName=BankingSystem.Tests.StatementServiceTests.GenerateStatement_ShouldReturnCorrectStatement
+```
+with this command 'dotnet test --filter FullyQulifiedName=[TestCaseName] (without []) all the other tests can be run individually.
 
-with this command 'dotnet test --filter FullyQulifiedName=<TestCaseName>' all the other tests can be run individually.
+## InterestServiceTests
 
-# InterestServiceTests
+```bash
 dotnet test --filter FullyQualifiedName=BankingSystem.Tests.InterestServiceTests.AddInterestRule_ValidRule_ReturnsTrue
-
+```
+```bash
 dotnet test --filter FullyQualifiedName=BankingSystem.Tests.InterestServiceTests.AddInterestRule_InvalidRate_ReturnsFalse
-
+```
+```bash
 dotnet test --filter FullyQualifiedName=BankingSystem.Tests.InterestServiceTests.CalculateInterest_ValidTransactions_ReturnsCorrectInterest
-
+```
+```bash
 dotnet test --filter FullyQualifiedName=BankingSystem.Tests.InterestServiceTests.PrintIntRules_ShouldReturnCorrectRules
+```
+with this command 'dotnet test --filter FullyQulifiedName=[TestCaseName]' (without []) all the other tests can be run individually.
 
-with this command 'dotnet test --filter FullyQulifiedName=<TestCaseName>' all the other tests can be run individually.
-
-
-
+-EOD-
 
 
 
